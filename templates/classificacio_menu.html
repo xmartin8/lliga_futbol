@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tria una lliga</title>
+</head>
+<body>
+    <h1>Tria una lliga</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Veure classificació</button>
+    </form>
+
+    <hr>
+
+    <h2>Altres lligues:</h2>
+    <ul>
+        {% for lliga in lligues %}
+            <li><a href="{% url 'classificacio' lliga.id %}">{{ lliga }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

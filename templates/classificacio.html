@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classificació</title>
+</head>
+<body>
+    <h1>Classificació</h1>
+
+    <table border="1">
+        <tr>
+            <th>Posició</th>
+            <th>Equip</th>
+            <th>Punts</th>
+        </tr>
+        {% for punts, equip in classificacio %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ equip }}</td>
+            <td>{{ punts }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><a href="{% url 'classificacio_menu' %}">Torna al menú</a></p>
+</body>
+</html>

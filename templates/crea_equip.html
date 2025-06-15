@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear equip</title>
+</head>
+<body>
+    <h1>Crear un nou equip</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear</button>
+    </form>
+
+    <p><a href="{% url 'classificacio_menu' %}">Torna al menú</a></p>
+</body>
+</html>
